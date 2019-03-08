@@ -1,31 +1,155 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app >
+    <v-navigation-drawer
+      v-model="drawerRight"
+       :mini-variant.sync="mini"
+      right
+      temporary
+      app
+    >
+       <v-toolbar flat class="transparent">
+      <v-list class="pa-0">
+        <v-list-tile avatar>
+          <v-list-tile-avatar>
+            <img src="./assets/deepak.jpg" alt="">
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title>
+              <router-link to="/" tag="span" style="cursor: pointer" >Deepak</router-link> 
+            </v-list-tile-title>
+          </v-list-tile-content>
+
+          <v-list-tile-action>
+            <v-btn
+              icon
+              @click.stop="mini = !mini"
+            >
+              <v-icon>chevron_left</v-icon>
+            </v-btn>
+          </v-list-tile-action>
+        </v-list-tile>
+      </v-list>
+    </v-toolbar>
+
+    <v-list class="pt-0" dense>
+      <v-divider></v-divider>
+
+      <v-list-tile
+        v-for="item in items"
+        :key="item.title"
+        :to="item.link"
+        @click=""
+      >
+        <v-list-tile-action>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-tile-action>
+
+        <v-list-tile-content>
+          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
+    </v-navigation-drawer>
+        <v-toolbar  app class="indigo lighten-2" >
+          <v-toolbar-side-icon @click.stop="drawerRight = !drawerRight"  class="hidden-md-and-up"></v-toolbar-side-icon>
+          <v-toolbar-title>
+             <router-link to="/" tag="span" style="cursor: pointer" >Deepak</router-link>  
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items class="hidden-sm-and-down">
+            <v-btn
+              flat
+              v-for="item in items"
+              :key="item.title"
+              :to="item.link">
+              <v-icon left dark>
+                {{ item.icon  }}
+              </v-icon>
+              {{ item.title }}
+            </v-btn>
+
+        </v-toolbar-items>
+        </v-toolbar>
+        <v-navigation-drawer
+          v-model="drawer"
+          fixed
+          app
+        >
+
+        </v-navigation-drawer>
+
+        <v-navigation-drawer app fixed class="indigo lighten-2" >
+          <v-avatar size="250">
+             <img src="./assets/deepak-badu1.jpg" alt="">
+          </v-avatar>
+
+            <v-list two-line>
+              <v-list-tile @click="">
+                <v-list-tile-action>
+                  <v-icon color="indigo">phone</v-icon>
+                </v-list-tile-action>
+
+                <v-list-tile-content>
+                  <v-list-tile-title>9860179454</v-list-tile-title>
+                  <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
+                </v-list-tile-content>
+
+                <v-list-tile-action>
+                  <v-icon>chat</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+
+              <v-divider inset></v-divider>
+
+              <v-list-tile @click="">
+                <v-list-tile-action>
+                  <v-icon color="indigo">mail</v-icon>
+                </v-list-tile-action>
+
+                <v-list-tile-content>
+                  <v-list-tile-title>dips.badu@gmail.com</v-list-tile-title>
+                  <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
+                </v-list-tile-content>
+              </v-list-tile>
+
+              <v-divider inset></v-divider>
+
+              <v-list-tile @click="">
+                <v-list-tile-action>
+                  <v-icon color="indigo">location_on</v-icon>
+                </v-list-tile-action>
+
+                <v-list-tile-content>
+                  <v-list-tile-title>New Baneshwor </v-list-tile-title>
+                  <v-list-tile-sub-title>Kathmandu,nepal</v-list-tile-sub-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+    </v-navigation-drawer>
+    <main>
+      <router-view></router-view>
+    </main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+<script>
+  import MobileView from '@/components/MobileView.vue'
+  export default {
+    compoents: { MobileView },
+    data () {
+      return {
+        drawerRight: false,
+        items: [
+          { icon: 'person_pin', title: 'About Me',link: '/Aboutme' },
+          { icon: 'book', title: 'Education', link: '/education' },
+          { icon: 'work', title: 'portfolio', link:'/projects' },
+          { icon: 'contact_phone', title: 'Contact Me', link: '/contact' }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+        ],
+        mini: true,
+        right: null
+      }
+    }
+  }
+</script>

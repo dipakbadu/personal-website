@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './components/Home.vue'
+import AboutMe from './components/AboutMe'
+import Education from './components/Education'
+import project from './components/project'
+import ContactMe from '@/components/ContactMe'
 
 Vue.use(Router)
 
@@ -14,12 +18,26 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      path: '/aboutme',
+      name: 'AboutMe',
+      component: AboutMe
+    },
+    {
+      path: '/education',
+      name: 'Education',
+      component: Education
+    },
+    {
+      path: '/projects',
+      name: 'project',
+      component: project
+    },
+    {
+      path: '/contact',
+      name: 'ContactMe',
+      component: ContactMe
+    },
+
+
   ]
 })
