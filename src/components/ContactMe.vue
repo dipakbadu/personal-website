@@ -2,9 +2,6 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
          <v-flex  class="mt-5">
-        <div>
-            <v-card>
-            <v-responsive :aspect-ratio="20/10">
                 <v-card-text>
                     <h1 class="display-2">Contact Me with social Media</h1><br/>
                     <a href="https://www.facebook.com/dipak.badu.31" target="_blank">
@@ -24,9 +21,6 @@
                         </a>
                       <br/>
                  </v-card-text>
-            </v-responsive>
-    </v-card>
-  </div>
         </v-flex>
      </v-layout>
   </v-container>

@@ -1,6 +1,7 @@
 <template>
-  <v-layout row class="mt-5" >
-    <v-flex xs12 sm7 offset-sm3 class="mt-5">
+  <v-container grid-list-md text-xs-center>
+  <v-layout  row class="mt-5" >
+    <v-flex xs12 sm7 offset-sm3 class="mt-4">
       <v-card>
         <v-toolbar flat dark>
           <v-toolbar-title class="text--center">view More About me</v-toolbar-title>
@@ -39,13 +40,11 @@
         </v-list>
       </v-card>
     </v-flex>
-    <MobileView/>
   </v-layout>
+  </v-container>
 </template>
 <script>
-   import MobileView from '../components/MobileView.vue'
    export default {
-    compoents: { MobileView },
     data () {
       return {
         items: [

@@ -11,6 +11,7 @@
     "register-service-worker": "^1.5.2",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
+    "vue-typewriter": "^2.2.1",
     "vuetify": "^1.5.5"
   },
   "devDependencies": {

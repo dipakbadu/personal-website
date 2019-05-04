@@ -1,6 +1,7 @@
 <template>
-    <v-layout row class="mt-5" >
-        <v-flex xs12 sm6 offset-sm4 class="">
+    <v-container grid-list-md text-xs-center>
+    <v-layout row class="mt-4" >
+        <v-flex xs12 sm7 offset-sm3 class="mt-4">
          <v-card v-for="project in projects"
           :key="project.id"
           class="mt-5"
@@ -35,6 +36,7 @@
       </v-card>
     </v-flex>
   </v-layout>
+  </v-container>
 </template>
 <script>
   export default {

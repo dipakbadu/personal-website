@@ -7,7 +7,7 @@
       temporary
       app
     >
-       <v-toolbar flat class="transparent">
+      <v-toolbar flat class="transparent">
       <v-list class="pa-0">
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -51,12 +51,13 @@
       </v-list-tile>
     </v-list>
     </v-navigation-drawer>
-        <v-toolbar  app class="indigo lighten-2" >
-          <v-toolbar-side-icon @click.stop="drawerRight = !drawerRight"  class="hidden-md-and-up"></v-toolbar-side-icon>
+        <v-toolbar  app class="indigo" clipped-right  >
+           <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up" ></v-toolbar-side-icon>
           <v-toolbar-title>
              <router-link to="/" tag="span" style="cursor: pointer" >Deepak</router-link>  
           </v-toolbar-title>
           <v-spacer></v-spacer>
+          <v-toolbar-side-icon @click.stop="drawerRight = !drawerRight"  class="hidden-md-and-up"></v-toolbar-side-icon>
           <v-toolbar-items class="hidden-sm-and-down">
             <v-btn
               flat
@@ -71,20 +72,39 @@
 
         </v-toolbar-items>
         </v-toolbar>
+
+
+
         <v-navigation-drawer
           v-model="drawer"
           fixed
           app
         >
-
         </v-navigation-drawer>
 
-        <v-navigation-drawer app fixed class="indigo lighten-2" >
-          <v-avatar size="250">
+        <v-navigation-drawer app fixed 
+         v-model="drawer" >
+          <v-avatar size="250" class="mt-5 ml-4">
              <img src="./assets/deepak-badu1.jpg" alt="">
           </v-avatar>
 
             <v-list two-line>
+              <v-list-tile @click="">
+                <v-list-tile-action>
+                  <v-icon color="indigo">phone</v-icon>
+                </v-list-tile-action>
+
+                <v-list-tile-content>
+                  <v-list-tile-title>9860179454</v-list-tile-title>
+                  <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
+                </v-list-tile-content>
+
+                <v-list-tile-action>
+                  <v-icon>chat</v-icon>
+                </v-list-tile-action>
+              </v-list-tile>
+
+              <v-divider inset></v-divider>
               <v-list-tile @click="">
                 <v-list-tile-action>
                   <v-icon color="indigo">phone</v-icon>
@@ -134,17 +154,17 @@
 </template>
 
 <script>
-  import MobileView from '@/components/MobileView.vue'
   export default {
-    compoents: { MobileView },
     data () {
       return {
-        drawerRight: false,
-        items: [
+        drawerRight: null,
+        drawer:null,
+
+         items: [
           { icon: 'person_pin', title: 'About Me',link: '/Aboutme' },
           { icon: 'book', title: 'Education', link: '/education' },
           { icon: 'work', title: 'portfolio', link:'/projects' },
-          { icon: 'contact_phone', title: 'Contact Me', link: '/contact' }
+          { icon: 'contact_phone', title: 'Contact Me', link: '/contact' },
 
         ],
         mini: true,
