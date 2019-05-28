@@ -1,36 +1,30 @@
 <template>
-    <v-container grid-list-md text-xs-center>
-        <v-layout row class="mt-5" >
-            <v-flex xs12 sm7 offset-sm3 class="mt-4">
-                <v-timeline align-top>
-                    <v-timeline-item
-                    v-for="(item, i) in items"
-                    :key="i"
-                    :color="item.color"
-                    :icon="item.icon"
-                    fill-dot
-                    >
-                    <v-card
-                        :color="item.color"
-                        dark
-                    >
-                        <v-card-title class="title"> {{item.title}} </v-card-title>
-                        <v-card-text class="white text--primary">
-                        <p> {{item.description}} </p>
-                         <v-btn
-                            :color="item.color"
-                            class="mx-0"
-                            outline
-                        >
-                         <a :href="'//' + item.link" target="_blank">  {{item.buttom}} </a> 
-                        </v-btn>
-                        </v-card-text>
-                    </v-card>
-                    </v-timeline-item>
-                </v-timeline>
-            </v-flex>
-        </v-layout>
-    </v-container>
+  <v-timeline align-top>
+    <v-timeline-item
+      v-for="(item, i) in items"
+      :key="i"
+      :color="item.color"
+      :icon="item.icon"
+      fill-dot
+       >
+      <v-card
+        :color="item.color"
+        dark
+        >
+        <v-card-title class="title"> {{item.title}} </v-card-title>
+          <v-card-text class="white text--primary">
+            <p> {{item.description}} </p>
+            <v-btn
+              :color="item.color"
+              class="mx-0"
+              outline
+              >
+              <a :href="'//' + item.link" target="_blank">  {{item.buttom}} </a> 
+            </v-btn>
+          </v-card-text>
+        </v-card>
+      </v-timeline-item>
+  </v-timeline>
 </template>
 <script>
   export default {

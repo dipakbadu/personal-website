@@ -1,0 +1,24 @@
+ <!--
+   <div>
+      <v-img
+         :src="require('../assets/cover.jpg')"
+         aspect-ratio="1.75" alt="deepak Badu"
+      >
+      </v-img>
+        <v-container grid-list-md text-xs-center>
+    <v-layout row wrap>
+         <v-flex xs12 sm7 offset-sm3  class="mt-5">
+               <h1 class="text-align">
+                  <typewriter
+                     :speed="200"
+                     :repeat='Infinity'
+                     :erase-delay='250'
+                     :interval="300"
+                     :words='["Hello Its Me Deepak Badu","Web Devloper!"]'>
+                  </typewriter>
+               </h1>
+        </v-flex>
+     </v-layout>
+  </v-container>
+   </div>
+  -->

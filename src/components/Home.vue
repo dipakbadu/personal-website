@@ -1,26 +1,26 @@
 <template>
-   <div>
+    <div>
       <v-img
-         :src="require('../assets/cover.jpg')"
-         aspect-ratio="2.75" alt="deepak Badu"
+        :src="require('../assets/cover.jpg')"
+         aspect-ratio="1.9" alt="deepak Badu"
+         height="400px"
       >
       </v-img>
-        <v-container grid-list-md text-xs-center>
-    <v-layout row wrap>
-         <v-flex xs12 sm7 offset-sm3  class="mt-5">
-                <v-card-text >
-                  <typewriter
-                     :speed="200"
-                     :repeat='Infinity'
-                     :erase-delay='250'
-                     :interval="300"
-                     :words='["Hello Its Me Deepak Badu","Web Devloper!"]'>
-                  </typewriter>
-                 </v-card-text>
-        </v-flex>
-     </v-layout>
-  </v-container>
-   </div>
+    <v-container grid-list-xs text-xs-center>
+      <v-layout row wrap>
+        <h1 class="text-align">
+          <typewriter
+            :speed="200"
+            :repeat='Infinity'
+            :erase-delay='700'
+            :interval="400"
+            :words='["Its Me Dipak Badu.","I am Web Devloper!!"]'>
+            Hello!! 
+          </typewriter>
+        </h1>
+      </v-layout>
+    </v-container>
+    </div>  
 </template>
 <script>
 export default {
@@ -28,11 +28,8 @@ export default {
 }
 </script>
 <style>
- typewriter{
-    color: red;
-    background-color: red;
-    text-emphasis-color: red;
-
+ h1{
+    color: #1976d2 !important;
  }
 </style>
 

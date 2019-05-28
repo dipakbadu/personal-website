@@ -1,64 +1,36 @@
 <template>
-    <v-container grid-list-md text-xs-center>
-    <v-layout row class="mt-4" >
-        <v-flex xs12 sm7 offset-sm3 class="mt-4">
-         <v-card v-for="project in projects"
-          :key="project.id"
-          class="mt-5"
-          >
-        <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-          height="200px"
-        >
-        </v-img>
-
-        <v-card-title primary-title>
-          <div>
-            <div class="headline"> {{project.name}} </div>
-            technology Used:
-            <span class="grey--text">{{ project.technologies }}</span>
-          </div>
-        </v-card-title>
-
-        <v-card-actions>
-            <h4> View More</h4>
-          <v-spacer></v-spacer>
-          <v-btn icon @click="show = !show">
-            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-          </v-btn>
-        </v-card-actions>
-
-        <v-slide-y-transition>
-          <v-card-text v-show="show">
-              {{project.description}}
-           </v-card-text>
-        </v-slide-y-transition>
-      </v-card>
-    </v-flex>
-  </v-layout>
-  </v-container>
+    <v-card>
+      <v-container
+        fluid
+        grid-list-lg
+      >
+        <v-layout row wrap>
+          <v-flex xs12>
+            <v-card color="blue-grey darken-2" class="white--text mt-2"
+              v-for="project in projects"
+              :key="project.title"
+            >
+              <v-card-title primary-title>
+                <div>
+                  <div class="headline" > {{project.title}} </div>
+                  <span> {{project.description}} </span>
+                </div>
+              </v-card-title>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-card>
 </template>
 <script>
-  export default {
-  data (){
-      return {
-          show: false,
-           projects: [
-               {
-                name: 'Todo List',
-                technologies: 'Bootstrap PHP',
-                description: 'Saangai is a concept, concept of bringing ' +
-                              'families and friends together, approach of knowing ' +
-                            'likeminded people in ' +
-                            'an easier way, playing travelling and investing together.',
-               },
-               {
-                   name: 'Personal-site',
-                   technologies: 'Vue Js',
-                   description: ' personal webite'
-               }
-           ]
+export default {
+      data () {
+        return {
+          projects: [
+            {title: 'Todo List',description:"Todo List developed using PHP and Bootstrap."},
+            {title: 'Personal Website',description:"My personal website developed using VusJS and Vuetify"}
+          ]
         }
-     }
   }
+}
 </script>

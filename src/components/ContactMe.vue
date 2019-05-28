@@ -1,33 +1,37 @@
 <template>
-  <v-container grid-list-md text-xs-center>
+<div>
     <v-layout row wrap>
-         <v-flex  class="mt-5">
-                <v-card-text>
-                    <h1 class="display-2">Contact Me with social Media</h1><br/>
-                    <a href="https://www.facebook.com/dipak.badu.31" target="_blank">
-                     <img src="https://img.icons8.com/color/48/000000/facebook.png">
-                     </a>
-                     <br/>
-                     <a href="https://www.instagram.com/dips_badu/" target="_blank">
-                        <img src="https://img.icons8.com/color/48/000000/instagram-new.png">
-                     </a> 
-                     <br/>
-                     <a href="https://twitter.com/DeepakBadu10" target="_blank">
-                       <img src="https://img.icons8.com/color/48/000000/twitter.png">
-                       </a>
-                       <br/>
-                       <a href="">
-                          <img src="https://img.icons8.com/color/48/000000/youtube-play.png">
-                        </a>
-                      <br/>
-                 </v-card-text>
+      <v-flex xs12 md3>
+        <p class="text-xs-center">
+          <v-icon class="iconWidth">phone</v-icon>
+        </p>
+        <h1 class="text-xs-center">Phone</h1>
+        <a href="tel:+9779844680862">
+          <h4 class="text-xs-center">+9779860179354</h4>
+        </a>
+      </v-flex>
+      <v-flex xs12 md3>
+        <p class="text-xs-center">
+          <v-icon class="iconWidth">email</v-icon>
+        </p>
+        <h1 class="text-xs-center">Email</h1>
+        <a href="mailto:dips.badu@gmail.com">
+          <h4 class="text-xs-center">dips.badu@gmail.com</h4>
+        </a>
+      </v-flex>
+      <v-flex xs12 md3 >
+        <p class="text-xs-center">
+          <v-icon class="iconWidth">location_city</v-icon>
+         </p>
+          <h1 class="text-xs-center">New Baneshwor</h1>
+              <h4 class="text-xs-center">Kathandu,nepal</h4>
         </v-flex>
-     </v-layout>
-  </v-container>
+      </v-layout>
+  </div>
 </template>
-<script>
-export default {
-    
-}
-</script>
 
+<style>
+.iconWidth {
+  font-size: 500% !important;
+}
+</style>
